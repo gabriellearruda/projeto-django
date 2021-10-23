@@ -1,5 +1,5 @@
 """
-WSGI config for impulsoprevine project.
+WSGI config for impulsoprevinedjango project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'impulsoprevine.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'impulsoprevinedjango.settings')
 
 application = get_wsgi_application()
