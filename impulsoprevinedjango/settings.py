@@ -55,7 +55,8 @@ ROOT_URLCONF = 'impulsoprevinedjango.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ["C:\\Users\\LowCost\\Documents\\IMPULSO\\projeto-django\\impulsoprevinedjango\\templates"],
+        # 'DIRS': ["C:\\Users\\LowCost\\Documents\\IMPULSO\\projeto-django\\impulsoprevinedjango\\templates"],
+        'DIRS': [os.path.join(BASE_DIR, 'impulsoprevinedjango/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
