@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'impulsoprevinedjango.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'piraju',
+        'NAME': 'django',
         'USER': 'postgres',
         'PASSWORD': 'root',
         'HOST': 'localhost',

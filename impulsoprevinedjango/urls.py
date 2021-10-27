@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url
 from django.http import HttpResponse
-from .view import HomePageView, AboutPageView
+from .view import Inicio, DadosAdm, Graficos
 
 
 def home(request):
@@ -25,6 +25,7 @@ def home(request):
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', HomePageView.as_view(), name='home'),
-    path('about/', AboutPageView.as_view(), name='about')
+    path('', Inicio.as_view(), name='inicio'),
+    path('dados/', DadosAdm.as_view(), name='dados'),
+    path('grafico/', Graficos.as_view(), name='graficos')
 ]
