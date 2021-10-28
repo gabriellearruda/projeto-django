@@ -1,8 +1,16 @@
-<div id="bar">
-    <a id="logo">
-        <img src="https://i.imgur.com/tTRwJ6o.png" width="100%" height="100%">
-    </a>
-    <span id="links">
-        <a class="link" href="{% url 'dados' %}">Clique Aqui!</a>
-    </span>
+<div id="bar" style="width: 100%;">
+    <div style="width: 30%; margin-left: 5%; max-width:200px;">
+        <a href="{% url 'inicio' %}">
+            <img src="https://i.imgur.com/tTRwJ6o.png" width="100%">
+        </a>
+    </div>
+    
+    <div style="width: 80%; margin-left: 5%;">
+        <p>
+            <a class="menu-item" href="{% url 'impulso' %}" target="_self" style="text-decoration:none; margin-left:2%; font-weight: bold; font-size: 18px; color:#275867">A Impulso Gov</a>
+            <a class="menu-item" href="{% url 'previne' %}" target="_self" style="text-decoration:none; margin-left:2%; font-weight: bold; font-size: 18px; color:#275867">O Previne Brasil</a>
+            <a class="menu-item" href="{% url 'indicadores' %}" target="_self" style="text-decoration:none; margin-left:2%; font-weight: bold; font-size: 18px; color:#275867">Indicadores</a>
+            <a class="menu-item" href="{% url 'graficos' %}" target="_self" style="text-decoration:none; margin-left:2%; font-weight: bold; font-size: 18px; color:#275867">Adm</a>
+        </p>
+    </div>
 </div>

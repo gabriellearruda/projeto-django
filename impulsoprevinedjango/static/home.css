@@ -1,5 +1,5 @@
 body {
-    font-family: "Poppins";
+    font-family: "PT Sans","Roboto", sans-serif;
     padding: 0;
     margin: 0;
 }
@@ -8,39 +8,44 @@ body {
     flex: 1;
     flex-direction: column;
 }
-/* Barra superior */
+
+
+/* Menu */
+
 #bar {
     display: flex;
     align-items: center;
-    height: 160px;
+    height: 140px;
     font-weight: bold;
-    font-size: 24px;
-    color: rgb(39, 88, 103);
+    font-size: 18px;
+    color: #275867;
 }
 
 #logo {
     margin-left: 50px;
     margin-top: 10px;
-    width: 500px;
-    height: 82px;
+    max-width: 100px;
+    /* height: 82px; */
 }
 
-#links{
+#menu-itens{
     margin-left: 40%;
     width: 100%;
 }
-
-
 @media screen and (max-width: 1024px) {
-    #links {
+    #menu-itens {
         margin-left: 20%;
     }
 }
-
-
-.link {
+.menu-item {
     margin-left: 10%;
+    text-decoration:none;
 }
+.menu-item:hover{
+    color:#e24717;
+}
+
+
 
 /* Banner */
 #banner {
@@ -62,6 +67,8 @@ body {
     color: #FFFFFF;
     font-weight: bold;
 }
+
+
 
 /* Conteudo 1 */
 
@@ -122,11 +129,25 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     text-align: center;
     height: 550px;
 }
 #meme{
     height: 30%;
     width: 30%;
+}
+
+
+
+
+
+#conteudo{
+    font-size: 3vw;
+    font-weight: bolder;
+    color: rgb(39, 88, 103);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }

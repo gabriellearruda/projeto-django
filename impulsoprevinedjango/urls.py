@@ -15,9 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.http import HttpResponse
-from .view import Inicio, DadosAdm, Graficos
+from .view import Inicio, DadosAdm, Graficos, Impulso, Indicadores, Previne
 
 
 def home(request):
@@ -25,7 +25,10 @@ def home(request):
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', Inicio.as_view(), name='inicio'),
     path('dados/', DadosAdm.as_view(), name='dados'),
-    path('grafico/', Graficos.as_view(), name='graficos')
+    path('grafico/', Graficos.as_view(), name='graficos'),
+    path('', Inicio.as_view(), name='inicio'),
+    path('impulso/', Impulso.as_view(), name='impulso'),
+    path('previne/', Previne.as_view(), name='previne'),
+    path('indicadores/', Indicadores.as_view(), name='indicadores')
 ]
