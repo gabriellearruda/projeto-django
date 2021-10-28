@@ -1,0 +1,28 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>{% if page_title %}{{ page_title }}{% else %}Impulso Previne{% endif %}</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+        <link rel="stylesheet" href="{% static 'inicio.css' %}">
+        <meta charset="utf-8">
+
+        {% block css %}
+        {% endblock %}
+
+        {% block js %}
+        {% endblock %}
+    </head>
+
+    <body>
+        <div id="main">
+            {% include 'core_menu.html' %}
+
+            {% block conteudo %}
+            {% endblock %}
+
+            {% include 'core_footer.html' %}
+        </div>
+    </body>
+</html>
