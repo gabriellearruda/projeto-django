@@ -9,12 +9,14 @@ from sqlalchemy.orm import sessionmaker, relationship
 from pandas.io import sql
 
 def readQuery(query):
+    database = 'impulso-producao'
+    credencial = json.load(open('credencial.json'))
     engine = create_engine(
-      'postgresql://{}:{}@{}:{}/{}?'.format("postgres",
-                        "1009-ImPuLsO@GOV!",
-                        "34.68.68.223",
-                        "5432",
-                        "postgres"), connect_args={"options": "-c statement_timeout=100000000"}
+      'postgresql://{}:{}@{}:{}/{}?'.format(credencial[database][0]['USERNAME'],
+                        credencial[database][0]['PASSWORD'],
+                        credencial[database][0]['HOSTNAME'],
+                        credencial[database][0]['PORT'],
+                        credencial[database][0]['DATABASE']), connect_args={"options": "-c statement_timeout=100000000"}
     )
     conexao = engine.connect()
     resultados = sql.read_sql(query, conexao)
