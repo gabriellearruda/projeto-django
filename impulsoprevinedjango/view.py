@@ -11,8 +11,8 @@ from pandas.io import sql
 def readQuery(query):
     engine = create_engine(
       'postgresql://{}:{}@{}:{}/{}?'.format("postgres",
-                        "root",
-                        "localhost",
+                        "1009-ImPuLsO@GOV!",
+                        "34.68.68.223",
                         "5432",
                         "postgres"), connect_args={"options": "-c statement_timeout=100000000"}
     )
@@ -52,7 +52,7 @@ class Graficos(TemplateView):
         SELECT municipio_nome, estado_id, periodo_codigo, 
         indicadores_parametros_nome, indicadores_parametros_meta, indicadores_parametros_ordem,
         indicadores_resultados_porcentagem, indicadores_nota_calculado, indicadores_niveis_nivel
-        FROM prod.visualizacao_indicadores;
+        FROM impulsoprevine.visualizacao_indicadores;
         """
         query_piraju = """
         SELECT 
