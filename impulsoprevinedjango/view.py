@@ -2,7 +2,7 @@
 # Usado para encontrar urls
 from django.urls import reverse_lazy, reverse
 from django.views.generic import TemplateView
-from formulario import DadosBanco
+from .formulario import DadosBanco
 import json
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, relationship
@@ -38,7 +38,7 @@ class Indicadores(TemplateView):
 class Previne(TemplateView):
     template_name = 'previne.html'
 
-@csrf_exempt 
+
 class DadosAdm(TemplateView): # new
     form_class = DadosBanco
     template_name = 'dados.html'
@@ -127,11 +127,9 @@ class Graficos(TemplateView):
                     tb_dim_unidade_saude
                 ON tb_dim_unidade_saude.co_seq_dim_unidade_saude = t2.co_dim_unidade_saude
             ) AS t3
-            LEFT JOIN
-                tb_dim_sexo
-            ON tb_dim_sexo.co_seq_dim_sexo = t3.co_dim_sexo
+            limit 600
         """
         df = readQuery(query_piraju)
         context['dados'] = json.loads(df.to_json(orient='records'))
-		import pdb; pdb.set_trace()
+        # import pdb; pdb.set_trace()
         return context
