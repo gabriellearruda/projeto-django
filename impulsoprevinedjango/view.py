@@ -127,9 +127,8 @@ class Graficos(TemplateView):
                     tb_dim_unidade_saude
                 ON tb_dim_unidade_saude.co_seq_dim_unidade_saude = t2.co_dim_unidade_saude
             ) AS t3
-            limit 600
+            limit 800
         """
         df = readQuery(query_piraju)
         context['dados'] = json.loads(df.to_json(orient='records'))
-        # import pdb; pdb.set_trace()
         return context
