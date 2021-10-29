@@ -14,18 +14,19 @@
             Conecte-se ao banco de dados
         </p>
     </div>
-    <form class='form-horizontal' action="{{ action_link }}" method="post">
-        <div id="content2">
-            <div>
-                {% for attr in form %}
-                        {{ attr.label }}
-                        {{ attr }}
-                    <br>
-                {% endfor %}
-            </div> 
-        </div>
-    </form>
-
+    <div id="content2">
+        <form class='form-horizontal'> {% csrf_token %}
+                <div>
+                    {% for attr in form %}
+                            {{ attr.label }}: {{ attr }}
+                        <br>
+                    {% endfor %}
+                </div> 
+        </form>
+    </div>
+    <div id="content2">
+        <a href="{% url 'graficos' %}"> Avançar</a>
+    </div>
     {% include 'core_footer.html' %}
 </div>
 </body>
